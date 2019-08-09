@@ -9,6 +9,10 @@ const io = require('socket.io')(server);
 
 io.on('connection', socket => {
     console.log('Nova conexao', socket.id);
+
+    socket.on('hello', message => {
+        console.log(message)
+    });
 })
 
 mongoose.connect('mongodb+srv://psousa:P@ssw0rd@cluster0-8qtex.mongodb.net/omnistack?retryWrites=true&w=majority',
